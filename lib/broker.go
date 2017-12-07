@@ -369,7 +369,7 @@ func (b *Broker) handleMessage(thingy map[string]interface{}) {
 		return
 	}
 	message.Broker = b
-	botNamePat := fmt.Sprintf(`^(?:@?%s[:,]?)\s+(?:${1})`, b.Config.Name)
+	botNamePat := fmt.Sprintf(`^(?:@?(?i)%s[:,]?)\s+(?:${1})`, b.Config.Name)
 	for _, cbInterface := range b.callbacks[M].Index {
 		callback := cbInterface.(*MessageCallback)
 
